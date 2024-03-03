@@ -23,7 +23,7 @@ cp assets/cava/cava_option_config ~/.config/cava
 
 Important about CAVA:
 
-You can configure number of bars and framerate of option "cava" in ```~/.config/cava/cava_option_config```:
+You can configure number of bars and framerate of the option ```cava``` in ```~/.config/cava/cava_option_config```:
 
 ```
 bars = <bars>

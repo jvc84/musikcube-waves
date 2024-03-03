@@ -26,3 +26,4 @@ info_musik = InfoAnimation(
     time=1,
     frames=info_frames_lib['info_musik_frames']
 )
+

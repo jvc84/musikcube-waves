@@ -186,3 +186,4 @@ cat_animations_list = [
                         cat_thinks,
                         cat_yawns
                        ]
+

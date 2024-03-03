@@ -74,3 +74,4 @@ for index, fl in enumerate(received_flags, 0):
             os.system("""echo "Something is incorrect. Use '--help' for more information" """)
             exit()
 
+

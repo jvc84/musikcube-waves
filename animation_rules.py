@@ -30,3 +30,4 @@ class Animation(object):
 
         else:
             os.system(f"{play_animation} {self.time} '{self.frames}' {category} {token}")
+

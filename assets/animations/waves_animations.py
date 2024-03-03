@@ -75,3 +75,4 @@ waves_stop = WavesAnimation(
     time=0.05,
     frames=waves_frames_lib['waves_stop_frames']
 )
+

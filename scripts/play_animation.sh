@@ -39,6 +39,3 @@ animation() {
 animation &
 (check_state && terminate_animation)
 
-
-
-

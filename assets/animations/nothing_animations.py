@@ -22,3 +22,4 @@ nothing_flat = NothingAnimation(
     time=1,
     frames=""
 )
+
