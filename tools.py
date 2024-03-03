@@ -49,4 +49,3 @@ def show_help():
           "    empty[=NUM]         -    shows NUM spaces. NUM=0 by default\n"
           "    flat[=NUM]          -    shows NUM '▁'. NUM=16 by default\n"
           )
-

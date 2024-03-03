@@ -120,17 +120,3 @@ That's pretty much it. Put star if you like this module and send bug report if s
 
 (=^ > ω <^=) :two_hearts:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

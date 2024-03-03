@@ -112,4 +112,3 @@ splash_animations_list = [
                           left_splash,
                           right_splash
                          ]
-
