@@ -1,6 +1,6 @@
 # musikcube-waves
 
-musikcube-waves is a module for bars like waybar and polybar that shows different animations based on musikcube status.
+musikcube-waves is a module for bars like waybar and polybar, that shows different animations based on musikcube status.
 
 **Main information**
 
@@ -32,10 +32,7 @@ framerate = <framerate>
 
 Usage:
 ```
-"custom/waves": {
-    "format": "{}",
-    "exec": "python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION]"
-},
+ python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION]
 ```
  
 **Information about Flags and Options**
@@ -71,10 +68,7 @@ If you just want to see cava:
 ![plot](doc/images/cava_example.png)
 
 ```
-"custom/just_cava": {
-    "format": "{}",
-    "exec": "python /PATH/TO/run_musikcube_animation.py --filler cava --saver cava --player cava"
-},
+python /PATH/TO/run_musikcube_animation.py --filler cava --saver cava --player cava
 ```
 
 If you want mini waves to move when music is on:
@@ -82,27 +76,24 @@ If you want mini waves to move when music is on:
 ![plot](doc/images/waves_example.png)
 
 ```
-"custom/mini_player": {
-    "format": "{}",
-    "exec": "python /PATH/TO/run_musikcube_animation.py --filler flat=3 --saver splash --player waves"
-},
+python /PATH/TO/run_musikcube_animation.py --filler flat=3 --saver splash --player waves
 ```
 
 If you want to separate left and right cava halves to put something in between:
 
 ![plot](doc/images/double_cava_example.png)
+- module for left audio channel
 
 ```
-"custom/left_waves": {
-    "format": "{}",
-    "exec": "python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player cava=left"
-},
+python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player cava=left
+```
 
+- <some other modules>
 
-"custom/right_waves": {
-    "format": "{}",
-    "exec": "python /PATH/TO/run_musikcube_animation.py --filler flat=8 --saver flat=8 --player cava=right"
-},
+- module for right audio channel
+
+```
+python /PATH/TO/run_musikcube_animation.py --filler flat=8 --saver flat=8 --player cava=right
 ```
 
 Maybe you just want a little cat to live in your bar:  
@@ -110,10 +101,7 @@ Maybe you just want a little cat to live in your bar:
 ![plot](doc/images/cat_example.png)
 
 ```
-"custom/just_cat": {
-    "format": "{}",
-    "exec": "python /PATH/TO/run_musikcube_animation.py --filler cat --saver cat --player cat"
-},
+python /PATH/TO/run_musikcube_animation.py --filler cat --saver cat --player cat
 ```
 
 That's pretty much it. Put star if you like this module and send bug report if something is wrong.
