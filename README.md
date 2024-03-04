@@ -54,8 +54,9 @@ cat                 -    ASCII cat animations
 info                -    'no musik'/'musik' 
 splash              -    some different animations of 3 bars
 waves               -    animation of 3 bars moving up and down
-cava[=SECTIONS]     -    dynamic waves, that depend on sound. Requiers cava. Avaliable SECTIONS: left, right, all. SECTIONS=all by default
-                         number of bars and framerate can be defined in musikcube-waves/assets/cava/cava_option_config
+cava[=SECTIONS]     -    dynamic waves, that depend on sound. Requires cava
+                         available SECTIONS: left, right, all. SECTIONS=all by default
+                         number of bars and framerate can be defined in '$XDG_CONFIG_HOME/cava/cava_option_config'
 empty[=NUM]         -    shows NUM spaces. NUM=0 by default
 flat[=NUM]          -    shows NUM '▁'. NUM=16 by default
 
@@ -82,7 +83,7 @@ python /PATH/TO/run_musikcube_animation.py --filler flat=3 --saver splash --play
 If you want to separate left and right cava halves to put something in between:
 
 ![plot](doc/images/double_cava_example.png)
-- module for left audio channel
+- module for left audio channel:
 
 ```
 python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player cava=left
@@ -90,7 +91,7 @@ python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player
 
 - some other modules
 
-- module for right audio channel
+- module for right audio channel:
 
 ```
 python /PATH/TO/run_musikcube_animation.py --filler flat=8 --saver flat=8 --player cava=right

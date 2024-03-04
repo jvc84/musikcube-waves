@@ -41,11 +41,12 @@ def show_help():
           
           "Options:\n"
           "    cat                 -    ASCII cat animations\n"
-          "    info                -    'no musik'/'musik' \n"
+          "    info                -    'no musik'/'musik'\n"
           "    splash              -    some different animations of 3 bars\n"
           "    waves               -    scripts of 3 bars moving up and down\n"
-          "    cava[=SECTIONS]     -    dynamic waves, that depend on sound. Requiers cava. Avaliable SECTIONS: left, right, all. SECTIONS=all by default\n"
-          "                             number of bars and framerate can be defined in musikcube-waves/assets/cava/cava_option_config\n"
+          "    cava[=SECTIONS]     -    dynamic waves, that depend on sound. Requires cava\n"
+          "                             available SECTIONS: left, right, all. SECTIONS=all by default\n"
+          "                             number of bars and framerate can be defined in $XDG_CONFIG_HOME/cava/cava_option_config\n"
           "    empty[=NUM]         -    shows NUM spaces. NUM=0 by default\n"
           "    flat[=NUM]          -    shows NUM '▁'. NUM=16 by default\n"
           )
