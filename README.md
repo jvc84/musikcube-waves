@@ -88,7 +88,7 @@ If you want to separate left and right cava halves to put something in between:
 python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player cava=left
 ```
 
-- <some other modules>
+- some other modules
 
 - module for right audio channel
 
