@@ -18,10 +18,8 @@ token=${4}
 # Variables
 readarray -td, frames_arr <<< "$frames"
 
-#terminate_animation() {
-#    pkill -f "$token"
-#}
 
+# Functions
 animation() {
     for i in  "${!frames_arr[@]}"
     do
