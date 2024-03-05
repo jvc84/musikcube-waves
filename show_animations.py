@@ -65,13 +65,6 @@ class Show(object):
         cava_position = option_arguments['cava_arguments'][f'{category}_cava_sections']
         play_cava = current_directory + '/scripts/play_cava.sh'
 
-        cava_processes_number = len(str(subprocess.check_output(["ps a | grep cava_option_config"], shell=True)).split("\\n"))
-
-        # kill cava processes if there are too much of them
-        if cava_processes_number - 1 > 4:
-            os.system("ps a | grep play_cava.sh | awk '{print $1}' | xargs kill -9 ")
-            os.system(f"ps a | grep -E cava_option_config | xargs kill -9 ")
-
         os.system(f"{play_cava} {cava_position} {category} {token}")
 
         return

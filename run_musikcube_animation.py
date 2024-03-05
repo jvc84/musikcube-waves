@@ -2,7 +2,7 @@ from tools import check_musikcube, check_musik
 from parse_flags import flag_values
 from show_animations import Show, current_directory
 
-import subprocess
+from time import sleep
 import os
 
 # Variables
@@ -44,7 +44,12 @@ def multiple_animations():
 
 
 def main():
-    os.system(f"rm -r {current_directory}/.tmp/*")
+    # Clean tmp files
+    os.system(f"rm -r {current_directory}/.tmp/*/*")
+
+    # Kill cava processes from previous runs
+    os.system("pkill -f play_cava.sh")
+    os.system(f"pkill -f cava_option_config")
 
     if flag_values['filler'] == flag_values['saver'] == flag_values['player'] and flag_values['filler'] not in options_with_arguments:
         single_animation()

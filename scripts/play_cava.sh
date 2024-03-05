@@ -20,7 +20,7 @@ original_config_file="$XDG_CONFIG_HOME/cava/cava_option_config"
 
 
 # Main
-local_config_file="$PARENTDIR/.tmp/cava_option_config_$token"
+local_config_file="$PARENTDIR/.tmp/cava/cava_option_config_$token"
 cp "$original_config_file" "$local_config_file"
 
 
