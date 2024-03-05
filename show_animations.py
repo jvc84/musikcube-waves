@@ -65,20 +65,12 @@ class Show(object):
         cava_position = option_arguments['cava_arguments'][f'{category}_cava_sections']
         play_cava = current_directory + '/scripts/play_cava.sh'
 
-        cava_tmp_configs = str(subprocess.check_output(["ps a | grep cava_option_config | awk '{print $7}' | rev | cut -f1 -d '/' | rev"], shell=True))[2:-3].split("\\n")
-        cava_processes_number = len(cava_tmp_configs)
+        cava_processes_number = len(str(subprocess.check_output(["ps a | grep cava_option_config"], shell=True)).split("\\n"))
 
         # kill cava processes if there are too much of them
-        if cava_processes_number > 4:
-            os.system("ps a | grep -ie play_cava.sh | awk '{print $1}' | xargs kill -9 ")
-            os.system("ps a | grep -ie cava_option_config | awk '{print $1}' | xargs kill -9 ")
-
-        active_tmp_configs = ''
-        for active_tmp_config in cava_tmp_configs:
-            active_tmp_configs += active_tmp_config + '|'
-
-        # remove all tmp configs except active
-        os.system(f"cd {current_directory}/.tmp && ls | grep -xvE '{active_tmp_configs[:-1]}' | xargs rm && cd - > /dev/null")
+        if cava_processes_number - 1 > 4:
+            os.system("ps a | grep play_cava.sh | awk '{print $1}' | xargs kill -9 ")
+            os.system(f"ps a | grep -E cava_option_config | xargs kill -9 ")
 
         os.system(f"{play_cava} {cava_position} {category} {token}")
 

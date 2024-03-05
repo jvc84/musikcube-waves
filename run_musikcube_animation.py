@@ -1,6 +1,6 @@
 from tools import check_musikcube, check_musik
 from parse_flags import flag_values
-from show_animations import Show
+from show_animations import Show, current_directory
 
 import subprocess
 import os
@@ -44,6 +44,7 @@ def multiple_animations():
 
 
 def main():
+    os.system(f"rm -r {current_directory}/.tmp/*")
 
     if flag_values['filler'] == flag_values['saver'] == flag_values['player'] and flag_values['filler'] not in options_with_arguments:
         single_animation()
