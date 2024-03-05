@@ -5,18 +5,15 @@ from assets.animations.splash_animations import splash_animations_list
 from assets.animations.cat_animations import cat_animations_list
 
 from tools import check_musikcube, check_musik
-from animation_rules import token
+from animation_rules import token, current_directory
 
-from pathlib import Path
 from time import sleep
 
-import subprocess
 import random
 import os
 
-# Variables
-current_directory = str(Path(__file__).parent.resolve())
 
+# Variables
 splash_animation_index = 0
 
 option_arguments = {

@@ -1,8 +1,8 @@
 from tools import check_musikcube, check_musik
+from animation_rules import current_directory
 from parse_flags import flag_values
-from show_animations import Show, current_directory
+from show_animations import Show
 
-from time import sleep
 import os
 
 # Variables
