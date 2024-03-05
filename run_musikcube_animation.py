@@ -51,6 +51,7 @@ def main():
     os.system("pkill -f play_cava.sh")
     os.system(f"pkill -f cava_option_config")
 
+    # Start animation
     if flag_values['filler'] == flag_values['saver'] == flag_values['player'] and flag_values['filler'] not in options_with_arguments:
         single_animation()
 
