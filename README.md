@@ -66,7 +66,7 @@ flat[=NUM]          -    shows NUM '▁'. NUM=16 by default
 
 If you just want to see cava:
 
-![plot](doc/images/cava_example.png)
+![plot](.doc/images/cava_example.png)
 
 ```
 python /PATH/TO/run_musikcube_animation.py --filler cava --saver cava --player cava
@@ -74,7 +74,7 @@ python /PATH/TO/run_musikcube_animation.py --filler cava --saver cava --player c
 
 If you want mini waves to move when music is on:
 
-![plot](doc/images/waves_example.png)
+![plot](.doc/images/waves_example.png)
 
 ```
 python /PATH/TO/run_musikcube_animation.py --filler flat=3 --saver splash --player waves
@@ -82,7 +82,7 @@ python /PATH/TO/run_musikcube_animation.py --filler flat=3 --saver splash --play
 
 If you want to separate left and right cava halves to put something in between:
 
-![plot](doc/images/double_cava_example.png)
+![plot](.doc/images/double_cava_example.png)
 - module for left audio channel:
 
 ```
@@ -99,7 +99,7 @@ python /PATH/TO/run_musikcube_animation.py --filler flat=8 --saver flat=8 --play
 
 Maybe you just want a little cat to live in your bar:  
 
-![plot](doc/images/cat_example.png)
+![plot](.doc/images/cat_example.png)
 
 ```
 python /PATH/TO/run_musikcube_animation.py --filler cat --saver cat --player cat
