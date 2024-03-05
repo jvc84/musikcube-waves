@@ -68,4 +68,3 @@ check_state() {
     fi
     terminate
 }
-

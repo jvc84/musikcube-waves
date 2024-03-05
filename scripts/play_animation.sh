@@ -37,4 +37,3 @@ animation() {
 # Main
 animation &
 check_state
-
