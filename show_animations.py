@@ -5,6 +5,7 @@ from assets.animations.splash_animations import splash_animations_list
 from assets.animations.cat_animations import cat_animations_list
 
 from tools import check_musikcube, check_musik
+from animation_rules import token
 
 from pathlib import Path
 from time import sleep
@@ -16,7 +17,6 @@ import os
 # Variables
 current_directory = str(Path(__file__).parent.resolve())
 
-# Animation variables
 splash_animation_index = 0
 
 option_arguments = {
@@ -76,7 +76,7 @@ class Show(object):
             os.system("ps aux | grep -ie play_cava.sh | awk '{print $2}' | xargs kill -9 ")
             os.system("ps aux | grep -ie cava_option_config | awk '{print $2}' | xargs kill -9 ")
 
-        os.system(f"{play_cava} {cava_position} {category}")
+        os.system(f"{play_cava} {cava_position} {category} {token}")
 
         return
 

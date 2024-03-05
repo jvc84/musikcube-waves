@@ -4,7 +4,9 @@ from time import sleep
 from pathlib import Path
 
 
-token = 'animation_' + secrets.token_urlsafe(8)
+token = secrets.token_urlsafe(8)
+animation_token = 'animation_' + token
+cava_token = 'cava_' + token
 
 current_directory = str(Path(__file__).parent.resolve())
 play_animation = current_directory + '/scripts/play_animation.sh'
@@ -14,7 +16,6 @@ class Animation(object):
     def __init__(self, time, frames):
         self.time = time
         self.frames = frames[:-1]
-
 
     @staticmethod
     def animate_full(time, frames):

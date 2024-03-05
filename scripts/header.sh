@@ -1,6 +1,12 @@
 #!/bin/bash
 
 
+# Functions
+terminate() {
+    pkill -f "$token"
+}
+
+
 get_variables() {
 
     musikcube_log=$(grep --text -E "resume|new instance created|pause|stop" "$HOME/.config/musikcube/log.txt" | tail -n1 | cut -f3 -d "]" )
@@ -59,6 +65,7 @@ check_state() {
 
             sleep 1
         done
+
     fi
 }
 
