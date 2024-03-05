@@ -65,7 +65,7 @@ check_state() {
 
             sleep 1
         done
-
     fi
+    terminate
 }
 

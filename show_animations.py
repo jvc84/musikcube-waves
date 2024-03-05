@@ -45,8 +45,6 @@ class Show(object):
 
     @staticmethod
     def show_empty(category):
-        # global option_arguments
-
         empty_output = ' ' * option_arguments['empty_arguments'][f'{category}_empty_sections']
         empty_frames = (empty_output + ',') * 10
         nothing_empty.animation(category, 1, empty_frames)
@@ -55,8 +53,6 @@ class Show(object):
 
     @staticmethod
     def show_flat(category):
-        # global option_arguments
-
         flat_output = '▁' * option_arguments['flat_arguments'][f'{category}_flat_sections']
         flat_frames = (flat_output + ',') * 10
 
@@ -69,12 +65,20 @@ class Show(object):
         cava_position = option_arguments['cava_arguments'][f'{category}_cava_sections']
         play_cava = current_directory + '/scripts/play_cava.sh'
 
-        cava_config_processes = subprocess.check_output(["ps a | grep cava_option_config"], shell=True)
-        cava_config_processes = len(str(cava_config_processes).split("\\n")) - 1
+        cava_tmp_configs = str(subprocess.check_output(["ps a | grep cava_option_config | awk '{print $7}' | rev | cut -f1 -d '/' | rev"], shell=True))[2:-3].split("\\n")
+        cava_processes_number = len(cava_tmp_configs)
 
-        if cava_config_processes > 4:
-            os.system("ps aux | grep -ie play_cava.sh | awk '{print $2}' | xargs kill -9 ")
-            os.system("ps aux | grep -ie cava_option_config | awk '{print $2}' | xargs kill -9 ")
+        # kill cava processes if there are too much of them
+        if cava_processes_number > 4:
+            os.system("ps a | grep -ie play_cava.sh | awk '{print $1}' | xargs kill -9 ")
+            os.system("ps a | grep -ie cava_option_config | awk '{print $1}' | xargs kill -9 ")
+
+        active_tmp_configs = ''
+        for active_tmp_config in cava_tmp_configs:
+            active_tmp_configs += active_tmp_config + '|'
+
+        # remove all tmp configs except active
+        os.system(f"cd {current_directory}/.tmp && ls | grep -xvE '{active_tmp_configs[:-1]}' | xargs rm && cd - > /dev/null")
 
         os.system(f"{play_cava} {cava_position} {category} {token}")
 

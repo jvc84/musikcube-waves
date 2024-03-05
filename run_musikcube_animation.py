@@ -2,6 +2,8 @@ from tools import check_musikcube, check_musik
 from parse_flags import flag_values
 from show_animations import Show
 
+import subprocess
+import os
 
 # Variables
 options_with_arguments = [

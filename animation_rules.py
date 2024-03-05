@@ -5,8 +5,6 @@ from pathlib import Path
 
 
 token = secrets.token_urlsafe(8)
-animation_token = 'animation_' + token
-cava_token = 'cava_' + token
 
 current_directory = str(Path(__file__).parent.resolve())
 play_animation = current_directory + '/scripts/play_animation.sh'
