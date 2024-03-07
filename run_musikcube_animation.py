@@ -5,6 +5,7 @@ from show_animations import Show
 
 import os
 
+
 # Variables
 options_with_arguments = [
     "cava",
