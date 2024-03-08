@@ -1,6 +1,6 @@
 import subprocess
 
-
+# Functions
 def check_musik():
     log = str(subprocess.check_output(['grep --text -E "resume|new instance created|pause|stop" "$XDG_CONFIG_HOME/musikcube/log.txt" | tail -n1'], shell=True))
 

@@ -5,7 +5,7 @@ import sys
 import os
 
 
-# Flags
+# Variables
 received_flags = sys.argv
 
 animation_flags = {
@@ -20,11 +20,10 @@ flag_values = {
     'player': 'cava'
 }
 
-# Options
 options = ["cat", "waves", "cava", "info", "splash", "empty", "flat"]
-# options_with_arguments = [empty, flat, cava]
 
 
+# Functions
 def detect_category(fl):
     for category_flags in animation_flags:
         if fl in animation_flags[category_flags]:
