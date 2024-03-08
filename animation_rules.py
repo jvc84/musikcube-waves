@@ -1,10 +1,15 @@
-from show_animations import current_directory, token
+from pathlib import Path
 from time import sleep
 
+import secrets
 import os
 
 
 # Variables
+token = secrets.token_urlsafe(8)
+
+current_directory = str(Path(__file__).parent.resolve())
+
 play_animation = current_directory + '/scripts/play_animation.sh'
 
 

@@ -4,20 +4,15 @@ from assets.animations.info_animations import info_musik, info_no_musik
 from assets.animations.splash_animations import splash_animations_list
 from assets.animations.cat_animations import cat_animations_list
 
-
+from animation_rules import current_directory, token
 from tools import check_musikcube, check_musik
-from pathlib import Path
 from time import sleep
 
-import secrets
 import random
 import os
 
 
 # Variables
-token = secrets.token_urlsafe(8)
-current_directory = str(Path(__file__).parent.resolve())
-
 splash_animation_index = 0
 
 option_arguments = {
