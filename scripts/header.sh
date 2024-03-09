@@ -14,59 +14,31 @@ get_variables() {
 
     # check_musikcube
     if [[ $musikcube_proc = "" ]]; then
-        check_musikcube=false
+        check_musikcube="false"
     else
-        check_musikcube=true
+        check_musikcube="true"
     fi
 
     # check_musik
     if [  "$musikcube_log" = " pause" ] || [ "$musikcube_log" = " stop"  ]; then
-        check_musik=false
+        check_musik="false"
     else
-        check_musik=true
+        check_musik="true"
     fi
+
 }
 
 
 check_state() {
+    get_variables
 
-    if [ "$category" = "filler" ]; then
-        while :
-        do
-            get_variables
-
-            if [ $check_musikcube == true ]; then
-                break
-            fi
-
-            sleep 1
-        done
-
-    elif [ "$category" = "saver" ]; then
-        while :
-        do
-            get_variables
-
-            if [ $check_musikcube == false ] || [ $check_musik == true ]; then
-                break
-            fi
-
-            sleep 1
-        done
-
-    elif [ "$category" = "player" ]; then
-        while :
-        do
-            get_variables
-
-            if [ $check_musikcube == false ] || [ $check_musik == false ]; then
-                break
-            fi
-
-            sleep 1
-        done
-    fi
+    while [ \( "$category" = "filler" \)  -a  \( "$check_musikcube" = "false" \) ] \
+       || [ \( "$category" = "saver" \)   -a  \( "$check_musikcube" = "true" \) -a \( "$check_musik" = "false" \) ] \
+       || [ \( "$category" = "player" \)  -a  \( "$check_musikcube" = "true" \) -a \( "$check_musik" = "true" \) ];
+    do
+        get_variables
+        sleep 0.5
+    done
 
     terminate
-
 }
