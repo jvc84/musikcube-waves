@@ -51,7 +51,7 @@ def parse_option_with_argument(fl, opt):
     opt_name_arguments = opt_name + '_arguments'
     category = detect_category(fl)
 
-    option_values[f'{opt_name_arguments}'][f'{category}_{opt_name}_sections'] = opt_value
+    option_values[f'{opt_name_arguments}'][f'{category}_{opt_name}_options'] = opt_value
 
 
 for index, fl in enumerate(received_flags, 0):
