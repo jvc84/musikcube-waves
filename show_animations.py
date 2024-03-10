@@ -19,20 +19,20 @@ option_values = {
     'empty_arguments': {
         'filler_empty_options': 0,
         'saver_empty_options': 0,
-        'player_empty_options': 0,
+        'player_empty_options': 0
 
     },
 
     'flat_arguments': {
         'filler_flat_options': 16,
         'saver_flat_options': 16,
-        'player_flat_options': 16,
+        'player_flat_options': 16
     },
 
     'cava_arguments': {
         'filler_cava_options': 'all',
         'saver_cava_options': 'all',
-        'player_cava_options': 'all',
+        'player_cava_options': 'all'
     }
 }
 
