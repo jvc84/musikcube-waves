@@ -34,11 +34,13 @@ check_state() {
     while :
     do
         get_variables
+
         if [ \( "$category" = "filler" \) -a  \( "$check_musikcube" = "true" \) ] \
         || [ \( "$category" = "saver" \)  -a  \( \( "$check_musikcube" = "false" \) -o \( "$check_musik" = "true" \) \) ] \
         || [ \( "$category" = "player" \) -a  \( \( "$check_musikcube" = "false" \) -o \( "$check_musik" = "false" \) \) ]; then
             break
         fi
+
         sleep 1
     done
 
