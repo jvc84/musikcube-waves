@@ -57,29 +57,6 @@ label = " %output%"
 
 Use ```python /PATH/TO/run_musikcube_animation.py --help``` to read about flags and options.
 
-
-Animation flags:
-```
--h, --help              -    displays information about usage, flags and options
--f, --filler  OPTION    -    animation, that plays whe musikcube is down. 'cat' by default
--s, --saver   OPTION    -    animation, that plays when musikcube is up, but music is on pause. 'flat' by default
--p, --player  OPTION    -    animation, that plays whe musikcube is up, and music is playing. 'cava' by default
-```         
-
-Options:
-```
-cat                 -    ASCII cat animations
-info                -    'no musik'/'musik' 
-splash              -    some different animations of 3 bars
-waves               -    animation of 3 bars moving up and down
-cava[=SECTIONS]     -    dynamic waves, that depend on sound. Requires cava
-                         available SECTIONS: left, right, all. SECTIONS=all by default
-                         number of bars and framerate can be defined in '$XDG_CONFIG_HOME/cava/cava_option_config'
-empty[=NUM]         -    shows NUM spaces. NUM=0 by default
-flat[=NUM]          -    shows NUM '▁'. NUM=16 by default
-
-```
-
 **Examples**
 
 If you just want to see cava:
