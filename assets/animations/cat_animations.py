@@ -1,12 +1,13 @@
 from animation_rules import Animation
 from tools import frame_multiplier
-import subprocess
+
+from subprocess import check_output
 
 
 # je = just_eye
 # lec = left_eye_closed
 try:
-    subprocess.check_output(["pgrep -x waybar"], shell=True)
+    check_output(["pgrep -x waybar"], shell=True)
     je = "･"
     lec = "&#60;"
 except:
