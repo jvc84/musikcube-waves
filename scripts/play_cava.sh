@@ -1,6 +1,5 @@
 #!/bin/bash
 
-FILE=$(basename "$0")
 MYDIR=$(dirname "$(realpath "$0")")
 PARENTDIR=$(dirname "$(realpath "$MYDIR")")
 
