@@ -6,7 +6,7 @@ MYDIR=$(dirname "$(realpath "$0")")
 source "$MYDIR/header.sh" # check_state
 
 
-# Flags
+# Args
 time=${1}
 frames=${2}
 

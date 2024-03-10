@@ -6,13 +6,12 @@ PARENTDIR=$(dirname "$(realpath "$MYDIR")")
 source "$MYDIR/header.sh" # check_state
 
 
-# Flags
+# Args
 cava_position=${1}
-token=${3}
 
 # use in header.sh
 category=${2}
-
+token=${3}
 
 # Variables
 original_config_file="$XDG_CONFIG_HOME/cava/cava_option_config"
