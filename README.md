@@ -48,7 +48,7 @@ Usage:
 type = custom/script
 
 exec = python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION] 
-tail=true 
+tail = true 
 
 format = <label>
 label = " %output%"
