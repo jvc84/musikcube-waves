@@ -40,7 +40,7 @@ Usage:
 "custom/waves": {
     "format": "{}",
     "exec": "python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION]"
-}
+},
 ```
 - polybar module:
 ```
