@@ -34,7 +34,24 @@ Usage:
 ```
  python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION]
 ```
- 
+
+- waybar module:
+```
+"custom/waves": {
+    "format": "{}",
+    "exec": "python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION]"
+}
+```
+- polybar module:
+```
+[module/waves]
+type = custom/script
+
+exec = python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION] 
+
+format = <label>
+label = " %output%"
+```
 **Information about Flags and Options**
 
 Use ```python /PATH/TO/run_musikcube_animation.py --help``` to read about flags and options.
