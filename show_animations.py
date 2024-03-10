@@ -20,7 +20,6 @@ option_values = {
         'filler_empty_options': 0,
         'saver_empty_options': 0,
         'player_empty_options': 0
-
     },
 
     'flat_arguments': {
