@@ -6,8 +6,8 @@ from assets.animations.cat_animations import cat_animations_list
 
 from animation_rules import current_directory, token
 from tools import check_musikcube, check_musik
-from time import sleep
 
+from time import sleep
 import random
 import os
 

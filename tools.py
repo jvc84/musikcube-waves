@@ -1,9 +1,9 @@
-import subprocess
+from subprocess import check_output
 
 
 # Functions
 def check_musik():
-    log = str(subprocess.check_output(['grep --text -E "resume|new instance created|pause|stop" "$XDG_CONFIG_HOME/musikcube/log.txt" | tail -n1'], shell=True))
+    log = str(check_output(['grep --text -E "resume|new instance created|pause|stop" "$XDG_CONFIG_HOME/musikcube/log.txt" | tail -n1'], shell=True))
 
     if 'pause' in log or 'stop' in log:
         return False
@@ -14,7 +14,7 @@ def check_musik():
 def check_musikcube():
 
     try:
-        subprocess.check_output(["pgrep -x musikcube"], shell=True)
+        check_output(["pgrep -x musikcube"], shell=True)
     except:
         return False
 

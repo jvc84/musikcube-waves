@@ -2,7 +2,7 @@ from show_animations import Show, current_directory
 from tools import check_musikcube, check_musik
 from parse_flags import flag_values
 
-
+from subprocess import check_output
 import os
 
 
@@ -46,14 +46,17 @@ def multiple_animations():
 
 def main():
     # Clean tmp files
-    os.system(f"rm -r {current_directory}/.tmp/*/*")
+    cava_configs_number = len(str(check_output([f"ls {current_directory}/.tmp/cava"], shell=True)).split("\\n"))
+    if cava_configs_number > 2:
+        os.system(f"rm -r {current_directory}/.tmp/cava/*")
 
     # Kill cava processes from previous runs
     os.system("pkill -f play_cava.sh")
     os.system(f"pkill -f cava_option_config")
 
     # Start animation
-    if flag_values['filler'] == flag_values['saver'] == flag_values['player'] and flag_values['filler'] not in options_with_arguments:
+    if (flag_values['filler'] == flag_values['saver'] == flag_values['player']
+       and flag_values['filler'] not in options_with_arguments):
         single_animation()
 
     else:
