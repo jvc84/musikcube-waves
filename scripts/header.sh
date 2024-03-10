@@ -13,7 +13,7 @@ get_variables() {
     musikcube_proc=$(pgrep -x musikcube)
 
     # check_musikcube
-    if [[ $musikcube_proc = "" ]]; then
+    if [ "$musikcube_proc" = "" ]; then
         check_musikcube="false"
     else
         check_musikcube="true"
@@ -25,19 +25,21 @@ get_variables() {
     else
         check_musik="true"
     fi
-
 }
 
 
 check_state() {
     get_variables
 
-    while [ \( "$category" = "filler" \)  -a  \( "$check_musikcube" = "false" \) ] \
-       || [ \( "$category" = "saver" \)   -a  \( "$check_musikcube" = "true" \) -a \( "$check_musik" = "false" \) ] \
-       || [ \( "$category" = "player" \)  -a  \( "$check_musikcube" = "true" \) -a \( "$check_musik" = "true" \) ];
+    while :
     do
         get_variables
-        sleep 0.5
+        if [ \( "$category" = "filler" \) -a  \( "$check_musikcube" = "true" \) ] \
+        || [ \( "$category" = "saver" \)  -a  \( \( "$check_musikcube" = "false" \) -o \( "$check_musik" = "true" \) \) ] \
+        || [ \( "$category" = "player" \) -a  \( \( "$check_musikcube" = "false" \) -o \( "$check_musik" = "false" \) \) ]; then
+            break
+        fi
+        sleep 1
     done
 
     terminate

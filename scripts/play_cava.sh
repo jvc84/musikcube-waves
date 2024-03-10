@@ -29,7 +29,6 @@ if [ "$cava_position" = "all" ]; then
 
 else
     bars=$(grep -E "bars=|bars =" "$local_config_file" | cut -f2 -d "=" | cut -f2 -d " " | head -n1)
-
     bars=$(echo "scale=0; $bars / 2" | bc)
 
     printf -v bars_string "%*s" "$bars"
