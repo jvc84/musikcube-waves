@@ -33,7 +33,6 @@ def detect_category(fl):
     return category
 
 
-# Parsing
 def parse_flag(fl, opt):
     category = detect_category(fl)
     flag_values[category] = opt
@@ -48,12 +47,13 @@ def parse_option_with_argument(fl, opt):
     opt_name = opt.split('=')[0]
     parse_flag(fl, opt_name)
 
-    opt_name_arguments = opt_name + '_arguments'
+    opt_name_options = opt_name + '_options'
     category = detect_category(fl)
 
-    option_values[f'{opt_name_arguments}'][f'{category}_{opt_name}_options'] = opt_value
+    option_values[f'{opt_name_options}'][f'{category}_{opt_name}_option'] = opt_value
 
 
+# Parsing
 for index, fl in enumerate(received_flags, 0):
     if index == 0 or fl in options:
         continue

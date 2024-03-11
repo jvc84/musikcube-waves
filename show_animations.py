@@ -16,22 +16,22 @@ import os
 splash_animation_index = 0
 
 option_values = {
-    'empty_arguments': {
-        'filler_empty_options': 0,
-        'saver_empty_options': 0,
-        'player_empty_options': 0,
+    'empty_options': {
+        'filler_empty_option': 0,
+        'saver_empty_option': 0,
+        'player_empty_option': 0,
     },
 
-    'flat_arguments': {
-        'filler_flat_options': 16,
-        'saver_flat_options': 16,
-        'player_flat_options': 16,
+    'flat_options': {
+        'filler_flat_option': 16,
+        'saver_flat_option': 16,
+        'player_flat_option': 16,
     },
 
-    'cava_arguments': {
-        'filler_cava_options': 'all',
-        'saver_cava_options': 'all',
-        'player_cava_options': 'all',
+    'cava_options': {
+        'filler_cava_option': 'all',
+        'saver_cava_option': 'all',
+        'player_cava_option': 'all',
     }
 }
 
@@ -41,7 +41,7 @@ class Show(object):
 
     @staticmethod
     def show_empty(category):
-        empty_output = ' ' * option_values['empty_arguments'][f'{category}_empty_options']
+        empty_output = ' ' * option_values['empty_options'][f'{category}_empty_option']
         empty_frames = (empty_output + ',') * 10
         nothing_empty.animation(category, 1, empty_frames)
 
@@ -49,7 +49,7 @@ class Show(object):
 
     @staticmethod
     def show_flat(category):
-        flat_output = '▁' * option_values['flat_arguments'][f'{category}_flat_options']
+        flat_output = '▁' * option_values['flat_options'][f'{category}_flat_option']
         flat_frames = (flat_output + ',') * 10
 
         nothing_flat.animation(category, 1, flat_frames)
@@ -58,7 +58,7 @@ class Show(object):
 
     @staticmethod
     def show_cava(category):
-        cava_position = option_values['cava_arguments'][f'{category}_cava_options']
+        cava_position = option_values['cava_options'][f'{category}_cava_option']
         play_cava = current_directory + '/scripts/play_cava.sh'
 
         os.system(f"{play_cava} {cava_position} {category} {token}")
