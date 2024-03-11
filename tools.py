@@ -36,9 +36,9 @@ def show_help():
           
           "Flags:\n"
           "    -h, --help              -    displays this help end exit\n"
-          "    -f, --filler  OPTION    -    what will play when musikcube is down. 'cat' by default\n"
-          "    -s, --saver   OPTION    -    what will play when musikcube is up, but music is on pause. 'flat' by default\n"
-          "    -p, --player  OPTION    -    what will play when musikcube is up, and music is playing. 'cava' by default\n\n"
+          "    -f, --filler  OPTION    -    when musikcube is down shows OPTION animation. OPTION=cat by default\n"
+          "    -s, --saver   OPTION    -    when musikcube is up, and music is on pause shows OPTION animation. OPTION=flat by default\n"
+          "    -p, --player  OPTION    -    when musikcube is up, and music is playing shows OPTION animation. OPTION=cava by default\n\n"
           
           "Options:\n"
           "    cat                     -    ASCII cat animations\n"
