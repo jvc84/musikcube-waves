@@ -1,4 +1,4 @@
-from subprocess import check_output
+from subprocess import check_output, CalledProcessError
 
 
 # Functions
@@ -15,7 +15,7 @@ def check_musikcube():
 
     try:
         check_output(["pgrep -x musikcube"], shell=True)
-    except:
+    except CalledProcessError:
         return False
 
     return True
