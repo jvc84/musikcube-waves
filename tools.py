@@ -3,7 +3,7 @@ from subprocess import check_output, CalledProcessError
 
 # Functions
 def check_musik():
-    log = str(check_output(['grep --text -E "resume|new instance created|pause|stop" "$XDG_CONFIG_HOME/musikcube/log.txt" | tail -n1'], shell=True))
+    log = str(check_output(['grep --text -E "resume|new instance created|pause|stop" "$HOME/.config/musikcube/log.txt" | tail -n1'], shell=True))
 
     if 'pause' in log or 'stop' in log:
         return False

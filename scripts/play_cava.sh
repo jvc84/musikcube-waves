@@ -14,7 +14,7 @@ category=${2}
 token=${3}
 
 # Variables
-original_config_file="$XDG_CONFIG_HOME/cava/cava_option_config"
+original_config_file="$HOME/.config/cava/cava_option_config"
 
 
 # Main
