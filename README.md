@@ -76,7 +76,10 @@ Cava config:
 ![plot](.doc/images/cava_example.png)
 
 ```
-python /PATH/TO/wayves/wayves.py -o cava -i cava -a cava
+"custom/wayves": {
+    "format": "{}",
+    "exec": "python /PATH/TO/wayves/wayves.py -o cava -i cava -a cava"
+},
 ```
 
 ### If you want mini waves to move when music is on:
@@ -84,7 +87,10 @@ python /PATH/TO/wayves/wayves.py -o cava -i cava -a cava
 ![plot](.doc/images/waves_example.png)
 
 ```bash
-python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves
+"custom/wayves": {
+    "format": "{}",
+    "exec": "python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves"
+},
 ```
 
 ### If you want to separate left and right cava halves to put something in between:
@@ -92,7 +98,7 @@ python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves
 ![plot](.doc/images/double_cava_example.png)
 - module for left audio channel:
 
-```conf
+```
 "custom/wayves_left": {
     "format": "{}",
     "exec": "python /PATH/TO/wayves/wayves.py -o cava=left -i cava=left -a cava=left"
@@ -103,7 +109,7 @@ python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves
 
 - module for right audio channel:
 
-```bash
+```
 "custom/wayves_right": {
     "format": "{}",
     "exec": "python /PATH/TO/wayves/wayves.py -o cava=right -i cava=right -a cava=right"
@@ -115,7 +121,11 @@ python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves
 ![plot](.doc/images/cat_example.png)
 
 ```bash
-python /PATH/TO/wayves/wayves.py -o cat -i cat -a cat
+"custom/wayves": {
+    "format": "{}",
+    "exec": "python /PATH/TO/wayves/wayves.py -o cat -i cat -a cat"
+},
+
 ```
 
 That's pretty much it. Put star if you like this module and send bug report if something is wrong.
