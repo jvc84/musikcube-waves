@@ -1,8 +1,8 @@
 # wayves
 
-wayves is a module for bars like waybar and polybar, that shows cava and/or different animations based on soundcube status.
+wayves is a module for bars like waybar and polybar, that shows cava and/or different animations based on chosen player status.
 
-**Main information**
+**Installation**
 
 Requirements:
 
@@ -30,12 +30,8 @@ bars = <bars>
 framerate = <framerate>
 ```
 
-Usage:
-```
- python /PATH/TO/soundcube-waves/wayves/wayves.py [--off OPTION] [--inactive OPTION] [--active OPTION]
-```
  
-**Information about Flags and Options**
+**Information about flags and options**
 
 Use ```python /PATH/TO/wayves/wayves.py --help``` to read about flags and options.
 
