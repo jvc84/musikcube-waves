@@ -73,15 +73,15 @@ Cava config:
 ![plot](.doc/images/cava_example.png)
 
 ```
-python /PATH/TO/wayves/wayves.py  --off cava --inactive cava --active cava
+python /PATH/TO/wayves/wayves.py --off cava --inactive cava --active cava
 ```
 
 ### If you want mini waves to move when music is on:
 
 ![plot](.doc/images/waves_example.png)
 
-```
-python /PATH/TO/wayves/wayves.py  --player <PLAYER> --off flat=3 --inactive splash --active waves
+```bash
+python /PATH/TO/wayves/wayves.py --player <PLAYER> --off flat=3 --inactive splash --active waves
 ```
 
 ### If you want to separate left and right cava halves to put something in between:
@@ -89,7 +89,7 @@ python /PATH/TO/wayves/wayves.py  --player <PLAYER> --off flat=3 --inactive spla
 ![plot](.doc/images/double_cava_example.png)
 - module for left audio channel:
 
-```
+```bash
 python /PATH/TO/wayves/wayves.py --off cava=left --inactive cava=left --active cava=left
 ```
 
@@ -97,7 +97,7 @@ python /PATH/TO/wayves/wayves.py --off cava=left --inactive cava=left --active c
 
 - module for right audio channel:
 
-```
+```bash
 python /PATH/TO/wayves/wayves.py --off cava=right --inactive cava=right --active cava=right
 ```
 
@@ -105,7 +105,7 @@ python /PATH/TO/wayves/wayves.py --off cava=right --inactive cava=right --active
 
 ![plot](.doc/images/cat_example.png)
 
-```
+```bash
 python /PATH/TO/wayves/wayves.py --off cat --inactive cat --active cat
 ```
 
