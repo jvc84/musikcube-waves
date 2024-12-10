@@ -10,12 +10,14 @@ player=${4}
 
 
 # Variables
+cache_path="$HOME/.cache/wayves"
+cached_config="$cache_path/cava_option_config_$token"
 config_file="$HOME/.config/cava/cava_option_config"
 
-mkdir "$HOME/.cache/wyaves" &> /dev/null
-cp "$config_file" "$HOME/.cache/wyaves/cava_option_config_$token"
+mkdir "$cache_path" &> /dev/null || (echo "Cannot create cache" && exit 1)
+cp "$config_file" "$cached_config"
 
-config_file="$HOME/.cache/wyaves/cava_option_config_$token"
+config_file="$cached_config"
 
 # Main
 if [ "$cava_position" = "all" ]; then
