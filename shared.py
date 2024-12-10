@@ -60,7 +60,7 @@ def frame_multiplier(frames, repeats):
 def show_help():
     print("""
           Usage:
-              python /path/to/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--palyer PLAYER]
+              python /path/to/wayves/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--palyer PLAYER]
           
           Animation flags:
               -h, --help                  -    displays this help end exit
