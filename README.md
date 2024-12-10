@@ -2,7 +2,7 @@
 
 wayves is a module for bars like waybar and polybar, that shows cava and/or different animations based on chosen player status.
 
-**Installation**
+## Installation
 
 Requirements:
 
@@ -21,7 +21,7 @@ mkdir ~/.config/cava
 cp assets/cava/cava_option_config ~/.config/cava
 ```
 
-**Important about CAVA:**
+## Important about CAVA:
 
 You can configure number of bars and framerate of the option ```cava``` in ```~/.config/cava/cava_option_config```:
 
@@ -31,7 +31,7 @@ framerate = <framerate>
 ```
 
  
-**Information about flags and options**
+## Information about flags and options
 
 Use ```python /PATH/TO/wayves/wayves.py --help``` to read about flags and options.
 
@@ -66,9 +66,9 @@ Cava config:
   $HOME/.config/cava_option_config    
       
 ```
-**Examples**
+## Examples
 
-If you just want cava:
+### If you just want cava:
 
 ![plot](.doc/images/cava_example.png)
 
@@ -76,7 +76,7 @@ If you just want cava:
 python /PATH/TO/wayves/wayves.py --off cava --inactive cava --active cava
 ```
 
-If you want mini waves to move when music is on:
+### If you want mini waves to move when music is on:
 
 ![plot](.doc/images/waves_example.png)
 
@@ -84,7 +84,7 @@ If you want mini waves to move when music is on:
 python /PATH/TO/wayves/wayves.py --off flat=3 --inactive splash --active waves
 ```
 
-If you want to separate left and right cava halves to put something in between:
+### If you want to separate left and right cava halves to put something in between:
 
 ![plot](.doc/images/double_cava_example.png)
 - module for left audio channel:
@@ -101,7 +101,7 @@ python /PATH/TO/wayves/wayves.py --off info --inactive flat=8 --active cava=left
 python /PATH/TO/wayves/wayves.py --off flat=8 --inactive flat=8 --active cava=right
 ```
 
-Maybe you just want a little cat to live in your bar:
+### Maybe you just want a little cat to live in your bar:
 
 ![plot](.doc/images/cat_example.png)
 
