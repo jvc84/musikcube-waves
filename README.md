@@ -86,7 +86,7 @@ Cava config:
 
 ![plot](.doc/images/waves_example.png)
 
-```bash
+```
 "custom/wayves": {
     "format": "{}",
     "exec": "python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves"
@@ -120,7 +120,7 @@ Cava config:
 
 ![plot](.doc/images/cat_example.png)
 
-```bash
+```
 "custom/wayves": {
     "format": "{}",
     "exec": "python /PATH/TO/wayves/wayves.py -o cat -i cat -a cat"
