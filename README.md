@@ -92,8 +92,11 @@ python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves
 ![plot](.doc/images/double_cava_example.png)
 - module for left audio channel:
 
-```bash
-python /PATH/TO/wayves/wayves.py -o cava=left -i cava=left -a cava=left
+```conf
+"custom/wayves_left": {
+    "format": "{}",
+    "exec": "python /PATH/TO/wayves/wayves.py -o cava=left -i cava=left -a cava=left"
+},
 ```
 
 - some other modules
@@ -101,7 +104,10 @@ python /PATH/TO/wayves/wayves.py -o cava=left -i cava=left -a cava=left
 - module for right audio channel:
 
 ```bash
-python /PATH/TO/wayves/wayves.py -o cava=right -i cava=right -a cava=right
+"custom/wayves_right": {
+    "format": "{}",
+    "exec": "python /PATH/TO/wayves/wayves.py -o cava=right -i cava=right -a cava=right"
+},
 ```
 
 ### Maybe you just want a little cat to live in your bar:
