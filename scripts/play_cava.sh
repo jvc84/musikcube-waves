@@ -14,8 +14,8 @@ cache_path="$HOME/.cache/wayves"
 cached_config="$cache_path/cava_option_config_$token"
 config_file="$HOME/.config/cava/cava_option_config"
 
-mkdir "$cache_path" &> /dev/null || (echo "Cannot create cache" && exit 1)
-cp "$config_file" "$cached_config"
+mkdir "$cache_path" &> /dev/null
+cp "$config_file" "$cached_config" || (echo "Cannot read cache" && exit 1)
 
 config_file="$cached_config"
 
