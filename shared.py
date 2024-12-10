@@ -63,7 +63,7 @@ def show_help():
     
         python /path/to/wayves/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--player PLAYER]
     
-    Animation flags:j
+    Animation flags:
     
         -h, --help                   -    displays this help end exit
         -p, --player <PLAYER>        -    player whit activity will be represented by this module    
