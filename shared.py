@@ -79,12 +79,12 @@ def show_help():
         splash              -    some different animations of 3 bars
         waves               -    scripts of 3 bars moving up and down
         cava[=SECTION]      -    dynamic waves, that depend on sound. Requires cava
-                                 available SECTIONS: left, right, all. SECTIONS=all by default
-                                 number of bars and frame rate can be defined in $XDG_CONFIG_HOME/cava/cava_option_config
+                                 available SECTIONS: left, right, all. SECTION=all by default
         empty[=NUM]         -    shows NUM spaces. NUM=0 by default
         flat[=NUM]          -    shows NUM '▁'. NUM=16 by default
         
     Cava config:
-    
+        
+        In config you can configure number of bars and frame rate (and other stuff)
         $HOME/.config/cava_option_config    
     """)
