@@ -38,16 +38,16 @@ Use ```python /PATH/TO/wayves/wayves.py --help``` to read about flags and option
 ```
 Usage:
 
-  python /path/to/wayves/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--palyer PLAYER]
+  python /path/to/wayves/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--player PLAYER]
 
-Animation flags:
+Animation flags:j
 
   -h, --help                  -    displays this help end exit
   -p, --player <PLAYER>        -    player whit activity will be represented by this module    
 (Unnecessary if all other flag have same value. You can get names of active players by command 'playerctl -l')    
-  -o, --off  <OPTION>          -    scripts, that plays whe soundcube is down. 'cat' by default
-  -i, --inactive   <OPTION>    -    scripts, that plays when soundcube is up, but music is on pause. 'splash' by default
-  -a, --active  <OPTION>       -    scripts, that plays whe soundcube is up, and music is playing. 'cava' by default
+  -o, --off  <OPTION>          -    scripts, that shows whe player is down. 'cat' by default
+  -i, --inactive   <OPTION>    -    scripts, that shows when player is up, but music is on pause. 'splash' by default
+  -a, --active  <OPTION>       -    scripts, that shows whe player is up, and music is playing. 'cava' by default
 
 Options:
 
@@ -64,7 +64,6 @@ Options:
 Cava config:
 
   $HOME/.config/cava_option_config    
-      
 ```
 ## Examples
 
@@ -73,7 +72,7 @@ Cava config:
 ![plot](.doc/images/cava_example.png)
 
 ```
-python /PATH/TO/wayves/wayves.py --off cava --inactive cava --active cava
+python /PATH/TO/wayves/wayves.py -o cava -i cava -a cava
 ```
 
 ### If you want mini waves to move when music is on:
@@ -81,7 +80,7 @@ python /PATH/TO/wayves/wayves.py --off cava --inactive cava --active cava
 ![plot](.doc/images/waves_example.png)
 
 ```bash
-python /PATH/TO/wayves/wayves.py --player <PLAYER> --off flat=3 --inactive splash --active waves
+python /PATH/TO/wayves/wayves.py -p <PLAYER> -o flat=3 -i splash -a waves
 ```
 
 ### If you want to separate left and right cava halves to put something in between:
@@ -90,7 +89,7 @@ python /PATH/TO/wayves/wayves.py --player <PLAYER> --off flat=3 --inactive splas
 - module for left audio channel:
 
 ```bash
-python /PATH/TO/wayves/wayves.py --off cava=left --inactive cava=left --active cava=left
+python /PATH/TO/wayves/wayves.py -o cava=left -i cava=left -a cava=left
 ```
 
 - some other modules
@@ -98,7 +97,7 @@ python /PATH/TO/wayves/wayves.py --off cava=left --inactive cava=left --active c
 - module for right audio channel:
 
 ```bash
-python /PATH/TO/wayves/wayves.py --off cava=right --inactive cava=right --active cava=right
+python /PATH/TO/wayves/wayves.py -o cava=right -i cava=right -a cava=right
 ```
 
 ### Maybe you just want a little cat to live in your bar:
@@ -106,7 +105,7 @@ python /PATH/TO/wayves/wayves.py --off cava=right --inactive cava=right --active
 ![plot](.doc/images/cat_example.png)
 
 ```bash
-python /PATH/TO/wayves/wayves.py --off cat --inactive cat --active cat
+python /PATH/TO/wayves/wayves.py -o cat -i cat -a cat
 ```
 
 That's pretty much it. Put star if you like this module and send bug report if something is wrong.
