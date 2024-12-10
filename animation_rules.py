@@ -1,8 +1,8 @@
-import os
-import secrets
 from time import sleep
 from pathlib import Path
-
+import secrets
+import shared
+import os
 
 token = secrets.token_urlsafe(8)
 animation_token = 'animation_' + token
@@ -28,6 +28,5 @@ class Animation(object):
     def animation_without_transition(self, category):
         if category == 'full':
             self.animate_full(self.time, self.frames)
-
         else:
-            os.system(f"{play_animation} {self.time} '{self.frames}' {category} {token}")
+            os.system(f"{play_animation} {self.time} '{self.frames}' {category} {token} {shared.player}")

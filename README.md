@@ -1,13 +1,13 @@
-# musikcube-waves
+# soundcube-waves
 
-musikcube-waves is a module for bars like waybar and polybar, that shows different animations based on musikcube status.
+soundcube-waves is a module for bars like waybar and polybar, that shows different animations based on soundcube status.
 
 **Main information**
 
 Requirements:
 
 ```
-musikcube
+soundcube
 bc
 cava
 ```
@@ -15,8 +15,8 @@ cava
 Installation:
 
 ```
-git clone https://github.com/jvc84/musikcube-waves.git
-cd musikcube-waves
+git clone https://github.com/jvc84/soundcube-waves.git
+cd soundcube-waves
 mkdir ~/.config/cava
 cp assets/cava/cava_option_config ~/.config/cava
 ```
@@ -32,26 +32,26 @@ framerate = <framerate>
 
 Usage:
 ```
- python /PATH/TO/musikcube-waves/run_musikcube_animation.py [--filler OPTION] [--saver OPTION] [--player OPTION]
+ python /PATH/TO/soundcube-waves/run_soundcube_animation.py [--off OPTION] [--inactive OPTION] [--active OPTION]
 ```
  
 **Information about Flags and Options**
 
-Use ```python /PATH/TO/run_musikcube_animation.py --help``` to read about flags and options.
+Use ```python /PATH/TO/run_soundcube_animation.py --help``` to read about flags and options.
 
 
 Animation flags:
 ```
 -h, --help              -    displays information about usage, flags and options
--f, --filler  OPTION    -    animation, that plays whe musikcube is down. 'cat' by default
--s, --saver   OPTION    -    animation, that plays when musikcube is up, but music is on pause. 'flat' by default
--p, --player  OPTION    -    animation, that plays whe musikcube is up, and music is playing. 'cava' by default
+-f, --off  OPTION    -    animation, that plays whe soundcube is down. 'cat' by default
+-s, --inactive   OPTION    -    animation, that plays when soundcube is up, but music is on pause. 'flat' by default
+-p, --active  OPTION    -    animation, that plays whe soundcube is up, and music is playing. 'cava' by default
 ```         
 
 Options:
 ```
 cat                 -    ASCII cat animations
-info                -    'no musik'/'musik' 
+info                -    'no sound'/'sound' 
 splash              -    some different animations of 3 bars
 waves               -    animation of 3 bars moving up and down
 cava[=SECTIONS]     -    dynamic waves, that depend on sound. Requires cava
@@ -69,7 +69,7 @@ If you just want to see cava:
 ![plot](doc/images/cava_example.png)
 
 ```
-python /PATH/TO/run_musikcube_animation.py --filler cava --saver cava --player cava
+python /PATH/TO/run_soundcube_animation.py --off cava --inactive cava --active cava
 ```
 
 If you want mini waves to move when music is on:
@@ -77,7 +77,7 @@ If you want mini waves to move when music is on:
 ![plot](doc/images/waves_example.png)
 
 ```
-python /PATH/TO/run_musikcube_animation.py --filler flat=3 --saver splash --player waves
+python /PATH/TO/run_soundcube_animation.py --off flat=3 --inactive splash --active waves
 ```
 
 If you want to separate left and right cava halves to put something in between:
@@ -86,7 +86,7 @@ If you want to separate left and right cava halves to put something in between:
 - module for left audio channel:
 
 ```
-python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player cava=left
+python /PATH/TO/run_soundcube_animation.py --off info --inactive flat=8 --active cava=left
 ```
 
 - some other modules
@@ -94,7 +94,7 @@ python /PATH/TO/run_musikcube_animation.py --filler info --saver flat=8 --player
 - module for right audio channel:
 
 ```
-python /PATH/TO/run_musikcube_animation.py --filler flat=8 --saver flat=8 --player cava=right
+python /PATH/TO/run_soundcube_animation.py --off flat=8 --inactive flat=8 --active cava=right
 ```
 
 Maybe you just want a little cat to live in your bar:  
@@ -102,7 +102,7 @@ Maybe you just want a little cat to live in your bar:
 ![plot](doc/images/cat_example.png)
 
 ```
-python /PATH/TO/run_musikcube_animation.py --filler cat --saver cat --player cat
+python /PATH/TO/run_soundcube_animation.py --off cat --inactive cat --active cat
 ```
 
 That's pretty much it. Put star if you like this module and send bug report if something is wrong.

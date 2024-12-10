@@ -1,15 +1,25 @@
 from animation_rules import Animation
-from tools import frame_multiplier
-import subprocess
-
+from shared import frame_multiplier
+from subprocess import check_output, CalledProcessError
+from os import system
 
 # je = just_eye
 # lec = left_eye_closed
+
+
+
 try:
-    subprocess.check_output(["pgrep -x waybar"], shell=True)
-    je = "･"
-    lec = "&#60;"
-except:
+    check_output(["pgrep -x waybar"], shell=True)
+    waybar_tty = str(check_output(["ps ax | grep waybar | awk '{print $2}'"], shell=True)) 
+    my_tty = str(check_output(["ps ax | grep \"^$$\" | awk '{print $2}'"], shell=True)) 
+    
+    if waybar_tty == my_tty:     
+        je = "･"
+        lec = "&#60;"
+    else:
+        je = "•"
+        lec = "<"
+except CalledProcessError:
     je = "•"
     lec = "<"
 
@@ -174,6 +184,8 @@ cat_yawns = CatAnimation(
     time=1,
     frames=cat_frames_lib['cat_yawns_frames']
 )
+
+
 
 cat_animations_list = [
                         cat_default,

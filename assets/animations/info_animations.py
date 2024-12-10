@@ -1,13 +1,13 @@
 from animation_rules import Animation
 
 info_frames_lib = {
-    'info_musik_frames':
-        '   musik  ,'
-        '  *musik  ,',
+    'info_sound_frames':
+        '   sound  ,'
+        '  *sound  ,',
 
-    'info_no_musik_frames':
-        ' no musik ,' 
-        '*no musik ,'
+    'info_no_sound_frames':
+        ' no sound ,' 
+        '*no sound ,'
 
 }
 
@@ -17,12 +17,12 @@ class InfoAnimation(Animation):
         self.animation_without_transition(category)
 
 
-info_no_musik = InfoAnimation(
+info_no_sound = InfoAnimation(
     time=1,
-    frames=info_frames_lib['info_no_musik_frames']
+    frames=info_frames_lib['info_no_sound_frames']
 )
 
-info_musik = InfoAnimation(
+info_sound = InfoAnimation(
     time=1,
-    frames=info_frames_lib['info_musik_frames']
+    frames=info_frames_lib['info_sound_frames']
 )

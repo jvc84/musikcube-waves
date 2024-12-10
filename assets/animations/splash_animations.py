@@ -1,5 +1,5 @@
 from animation_rules import Animation
-from tools import frame_multiplier
+from shared import frame_multiplier
 
 #     ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
 #     1 2 3 4 5 6 7 8
@@ -12,8 +12,8 @@ f6 = "▆"
 f7 = "▇"
 f8 = "█"
 
-saver_frames_lib = {
-    'dot_saver_frames':
+inactive_frames_lib = {
+    'dot_inactive_frames':
         f'{f1}{f1}{f1},'
         f'*{f1}{f1},'
         f'{f1}*{f1},'
@@ -88,22 +88,22 @@ class SplashAnimation(Animation):
 
 dot_splash = SplashAnimation(
     time=0.4,
-    frames=saver_frames_lib['dot_saver_frames']
+    frames=inactive_frames_lib['dot_inactive_frames']
 )
 
 right_splash = SplashAnimation(
     time=0.1,
-    frames=saver_frames_lib['right_splash_frames']
+    frames=inactive_frames_lib['right_splash_frames']
 )
 
 center_splash = SplashAnimation(
     time=0.1,
-    frames=saver_frames_lib['center_splash_frames']
+    frames=inactive_frames_lib['center_splash_frames']
 )
 
 left_splash = SplashAnimation(
     time=0.1,
-    frames=saver_frames_lib['left_splash_frames']
+    frames=inactive_frames_lib['left_splash_frames']
 )
 
 splash_animations_list = [

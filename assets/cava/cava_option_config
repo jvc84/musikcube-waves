@@ -15,7 +15,7 @@ framerate = 60
 # Accepts only non-negative values.
 ; framerate = 60
 
-# 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
+# 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = active
 # new as of 0.6.0 autosens of low values (dynamic range)
 # 'overshoot' allows bars to overshoot (in % of terminal height) without initiating autosens. DEPRECATED as of 0.6.0
 ; autosens = 1
@@ -38,12 +38,12 @@ framerate = 60
 ; bar_spacing = 5
 
 
-# Lower and higher cutoff frequencies for lowest and highest bars
+# Lower and higher cutactive frequencies for lowest and highest bars
 # the bandwidth of the visualizer.
 # Note: there is a minimum total bandwidth of 43Mhz x number of bars.
-# Cava will automatically increase the higher cutoff if a too low band is specified.
-; lower_cutoff_freq = 50
-; higher_cutoff_freq = 10000
+# Cava will automatically increase the higher cutactive if a too low band is specified.
+; lower_cutactive_freq = 50
+; higher_cutactive_freq = 10000
 
 
 # Seconds with no input before cava goes to sleep mode. Cava will not perform FFT or drawing and
@@ -90,7 +90,7 @@ method = pulse
 # from frame to frame in the terminal. 'ncurses' is default if supported.
 #
 # 'raw' is an 8 or 16 bit (configurable via the 'bit_format' option) data
-# stream of the bar heights that can be used to send to other applications.
+# stream of the bar heights that can be used to send to other playerlications.
 # 'raw' defaults to 200 bars, which can be adjusted in the 'bars' option above.
 #
 # 'noritake' outputs a bitmap in the format expected by a Noritake VFD display
@@ -132,13 +132,13 @@ ascii_max_range = 7
 ; sdl_y= -1
 
 # set label on bars on the x-axis. Can be 'frequency' or 'none'. Default: 'none'
-# 'frequency' displays the lower cut off frequency of the bar above.
+# 'frequency' displays the lower cut active frequency of the bar above.
 # Only supported on ncurses and noncurses output.
 ; xaxis = none
 
-# enable alacritty synchronized updates. 1 = on, 0 = off
+# enable alacritty synchronized updates. 1 = on, 0 = active
 # removes flickering in alacritty terminal emeulator.
-# defaults to off since the behaviour in other terminal emulators is unknown
+# defaults to active since the behaviour in other terminal emulators is unknown
 ; alacritty_sync = 1
 
 [color]
@@ -157,7 +157,7 @@ ascii_max_range = 7
 
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
-# background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
+# background must also be defined in hex  or remain commented out. 1 = on, 0 = active.
 # You can define as many as 8 different colors. They range from bottom to top of screen
 ; gradient = 0
 ; gradient_count = 8
@@ -183,8 +183,8 @@ ascii_max_range = 7
 ; monstercat = 0
 ; waves = 0
 
-# Set gravity percentage for "drop off". Higher values means bars will drop faster.
-# Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
+# Set gravity percentage for "drop active". Higher values means bars will drop faster.
+# Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop active".
 # DEPRECATED as of 0.8.0, use noise_reduction instead
 ; gravity = 100
 

@@ -1,21 +1,17 @@
 #!/bin/bash
 
-
 MYDIR=$(dirname "$(realpath "$0")")
-
-source "$MYDIR/header.sh" # check_state, terminate
-
 
 # Flags
 time=${1}
 frames=${2}
 category=${3}
 token=${4}
+player=${5}
 
 
 # Variables
 readarray -td, frames_arr <<< "$frames"
-
 
 animation() {
     for i in  "${!frames_arr[@]}"
@@ -25,11 +21,9 @@ animation() {
         sleep "$time"
     done
 
-    terminate
+    pkill -f "$token" &> /dev/null
 }
 
 
 # Main
-animation &
-(check_state && terminate)
-
+animation & "$MYDIR/player_tracker.sh" "$player" "$category" "$token"

@@ -1,21 +1,21 @@
 #!/bin/bash
 
-FILE=$(basename "$0")
 MYDIR=$(dirname "$(realpath "$0")")
-PARENTDIR=$(dirname "$(realpath "$MYDIR")")
-
-source "$MYDIR/header.sh" # check_state, terminate
-
 
 # Flags
 cava_position=${1}
 category=${2}
 token=${3}
+player=${4}
 
 
 # Variables
-config_file="$XDG_CONFIG_HOME/cava/cava_option_config"
+config_file="$HOME/.config/cava/cava_option_config"
 
+mkdir "$HOME/.cache/wyaves" &> /dev/null
+cp "$config_file" "$HOME/.cache/wyaves/cava_option_config_$token"
+
+config_file="$HOME/.cache/wyaves/cava_option_config_$token"
 
 # Main
 if [ "$cava_position" = "all" ]; then
@@ -26,6 +26,7 @@ else
 
     bars=$(echo "scale=0; $bars / 2" | bc)
 
+    # shellcheck disable=SC2183
     printf -v bars_string "%*s" "$bars"
 
     dots=${bars_string// /.}
@@ -38,7 +39,6 @@ else
     fi
 fi
 
-
 cava -p "$config_file" | sed -u "s/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;" | sed -u "$cut_cava" &     # add dots befor '$' or after '^' to remove bars
-(check_state && terminate)
+"$MYDIR/player_tracker.sh" "$player" "$category" "$token"
 
