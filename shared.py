@@ -6,9 +6,9 @@ player = ""
 def get_status():
     global player
 
-    output = str(check_output(
+    output = check_output(
         [f'playerctl status --player="{player}" 2> /dev/null'],
-        shell=True))
+        shell=True)
 
     return output
 
@@ -22,7 +22,7 @@ def check_music():
     try:
         status = get_status()
 
-        if 'Playing' in status:
+        if b'Playing' in status:
             return True
         else:
             return False
@@ -40,7 +40,7 @@ def check_player():
     try:
         status = get_status()
 
-        if 'P' in status:
+        if b'P' in status:
             return True
         else:
             return False
@@ -65,7 +65,7 @@ def show_help():
     
     Animation flags:j
     
-        -h, --help                  -    displays this help end exit
+        -h, --help                   -    displays this help end exit
         -p, --player <PLAYER>        -    player whit activity will be represented by this module    
     (Unnecessary if all other flag have same value. You can get names of active players by command 'playerctl -l')    
         -o, --off  <OPTION>          -    scripts, that shows whe player is down. 'cat' by default
@@ -86,5 +86,5 @@ def show_help():
     Cava config:
         
         In config you can configure number of bars and frame rate (and other stuff)
-        $HOME/.config/cava_option_config    
+        Config path         -    $HOME/.config/cava_option_config    
     """)

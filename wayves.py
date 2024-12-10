@@ -225,26 +225,31 @@ def parse_arguments():
     received_flags = sys.argv
 
     for i, fl in enumerate(received_flags, 0):
+
         if i == 0 or fl in options:
             continue
 
-        elif fl == "--help" or fl == "-h":
-            show_help()
-            exit()
-
-        elif fl == "--player" or fl == "-p":
-            shared.player = received_flags[i + 1]
-
-        elif "=" in fl:
+        if "=" in fl:
             parse_option_with_value(received_flags[i - 1], fl)
+        else:
+            match fl:
+                case "-h" | "--help":
+                    show_help()
+                    exit()
+                case "-p" | "--player":
+                    shared.player = received_flags[i + 1]
+                case _:
+                    if (received_flags[i - 1] != "-p" and
+                            received_flags[i - 1] != "--player"):
+                        try:
+                            parse_flag(fl, received_flags[i + 1])
+                        except IndexError:
+                            print("\nIncorrect flag was used!")
+                            show_help()
+                            exit()
 
-        elif received_flags[i-1] != "-p" and received_flags[i-1] != "--player":
-            try:
-                parse_flag(fl, received_flags[i + 1])
-            except IndexError:
-                print("\nIncorrect flag was used!")
-                show_help()
-                exit()
+
+
                 
                 
 def main():
