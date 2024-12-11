@@ -40,32 +40,32 @@ Use ```python /PATH/TO/wayves/wayves.py --help``` to read about flags and option
 ```
 Usage:
     
-        python /path/to/wayves/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--player PLAYER]
+    python /path/to/wayves/wayves.py [--off <OPTION>] [--inactive <OPTION>] [--active <OPTION>] [--player PLAYER]
+ 
+ nimation flags:
+ 
+    -h, --help                   -    displays this help end exit
+    -p, --player <PLAYER>        -    player whit activity will be represented by this module    
+ Unnecessary if all other flag have same value. You can get names of active players by command 'playerctl -l')    
+    -o, --off  <OPTION>          -    scripts, that shows whe player is down. 'cat' by default
+    -i, --inactive   <OPTION>    -    scripts, that shows when player is up, but music is on pause. 'splash' by default
+    -a, --active  <OPTION>       -    scripts, that shows whe player is up, and music is playing. 'cava' by default
+ 
+ ptions:
+ 
+    cat                 -    ASCII cat animations
+    info                -    'no sound'/'sound'
+    splash              -    some different animations of 3 bars
+    waves               -    scripts of 3 bars moving up and down
+    cava[=SECTION]      -    dynamic waves, that depend on sound. Requires cava
+                             available SECTIONS: left, right, all. SECTION=all by default
+    empty[=NUM]         -    shows NUM spaces. NUM=0 by default
+    flat[=NUM]          -    shows NUM '▁'. NUM=16 by default
     
-    Animation flags:
+ ava config:
     
-        -h, --help                   -    displays this help end exit
-        -p, --player <PLAYER>        -    player whit activity will be represented by this module    
-    (Unnecessary if all other flag have same value. You can get names of active players by command 'playerctl -l')    
-        -o, --off  <OPTION>          -    scripts, that shows whe player is down. 'cat' by default
-        -i, --inactive   <OPTION>    -    scripts, that shows when player is up, but music is on pause. 'splash' by default
-        -a, --active  <OPTION>       -    scripts, that shows whe player is up, and music is playing. 'cava' by default
-    
-    Options:
-    
-        cat                 -    ASCII cat animations
-        info                -    'no sound'/'sound'
-        splash              -    some different animations of 3 bars
-        waves               -    scripts of 3 bars moving up and down
-        cava[=SECTION]      -    dynamic waves, that depend on sound. Requires cava
-                                 available SECTIONS: left, right, all. SECTION=all by default
-        empty[=NUM]         -    shows NUM spaces. NUM=0 by default
-        flat[=NUM]          -    shows NUM '▁'. NUM=16 by default
-        
-    Cava config:
-        
-        In config you can configure number of bars and frame rate (and other stuff)
-        Config path         -    $HOME/.config/cava_option_config    
+    In config you can configure number of bars and frame rate (and other stuff)
+    Config path         -    $HOME/.config/cava_option_config    
 ```
 </details>
 
