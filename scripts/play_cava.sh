@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MYDIR=$(dirname "$(realpath "$0")")
-
+PARENTDIR=$(dirname "$(realpath "$MYDIR")")
 # Flags
 cava_position=${1}
 category=${2}
@@ -14,12 +14,20 @@ cache_path="$HOME/.cache/wayves"
 cached_config="$cache_path/cava_option_config_$token"
 config_file="$HOME/.config/cava/cava_option_config"
 
+# Functions
+cache_config() {
+     cp "$config_file" "$cached_config"
+}
+
+
+# Main
 mkdir -p "$cache_path" &> /dev/null
-cp "$config_file" "$cached_config" || (echo "Cannot cache cava config!" && exit 1)
+cache_config ||
+( cp "$PARENTDIR/assets/cava/cava_option_config" "$config_file" && cache_config) ||
+(echo "Cannot cache cava config!" && exit 1)
 
 config_file="$cached_config"
 
-# Main
 if [ "$cava_position" = "all" ]; then
     cut_cava="s/$//"
 
