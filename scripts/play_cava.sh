@@ -2,6 +2,7 @@
 
 MYDIR=$(dirname "$(realpath "$0")")
 PARENTDIR=$(dirname "$(realpath "$MYDIR")")
+
 # Flags
 cava_position=${1}
 category=${2}
@@ -16,14 +17,15 @@ config_file="$HOME/.config/cava/cava_option_config"
 
 # Functions
 cache_config() {
-     cp "$config_file" "$cached_config"
+     cp "$config_file" "$cached_config" > /dev/null 2>&1
 }
 
 
 # Main
 mkdir -p "$cache_path" &> /dev/null
+
 cache_config ||
-( cp "$PARENTDIR/assets/cava/cava_option_config" "$config_file" && cache_config) ||
+(cp "$PARENTDIR/assets/cava/cava_option_config" "$config_file" && cache_config) ||
 (echo "Cannot cache cava config!" && exit 1)
 
 config_file="$cached_config"
