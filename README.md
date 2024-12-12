@@ -65,7 +65,7 @@ Options:
 Cava config:
     
     In config you can configure number of bars and frame rate (and other stuff)
-    Config path         -    $HOME/.config/cava_option_config    
+    Config path         -    $HOME/.config/cava/cava_option_config    
 ```
 </details>
 
