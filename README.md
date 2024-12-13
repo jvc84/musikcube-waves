@@ -16,7 +16,7 @@ Installation:
 
 ```bash
 git clone https://github.com/jvc84/wayves.git
-cd waves
+cd wayves
 mkdir ~/.config/cava
 cp assets/cava/cava_option_config ~/.config/cava
 ```
