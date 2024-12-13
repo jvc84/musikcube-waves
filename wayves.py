@@ -192,6 +192,8 @@ def single_animation():
         if flag_values['off'] == "cava":
             shared.player = "cava"
             current_category = "off"
+        elif flag_values['off'] == "waves":
+            current_category = "off"
         else:
             current_category = 'full'
 
@@ -204,7 +206,6 @@ def multiple_animations():
     if shared.player == "":
         print("No player specified!")
         show_help()
-        exit()
     while True:
         if check_player() is False:
             current_category = 'off'
@@ -235,7 +236,6 @@ def parse_arguments():
             match fl:
                 case "-h" | "--help":
                     show_help()
-                    exit()
                 case "-p" | "--player":
                     shared.player = received_flags[i + 1]
                 case _:
@@ -246,7 +246,6 @@ def parse_arguments():
                         except IndexError:
                             print("\nIncorrect flag was used!")
                             show_help()
-                            exit()
 
 
 

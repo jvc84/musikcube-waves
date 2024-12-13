@@ -12,7 +12,7 @@ f6 = "▆"
 f7 = "▇"
 f8 = "█"
 
-waves_frames_lib = {
+waves_frames_dict = {
     'show_waves_frames':
         f'{f8}{f3}{f5},'
         f'{f7}{f4}{f4},'
@@ -62,16 +62,16 @@ class WavesAnimation(Animation):
 
 waves_main = WavesAnimation(
     time=0.1,
-    frames=waves_frames_lib['show_waves_frames']
+    frames=waves_frames_dict['show_waves_frames']
 )
 
 
 waves_start = WavesAnimation(
     time=0.05,
-    frames=waves_frames_lib['waves_start_frames']
+    frames=waves_frames_dict['waves_start_frames']
 )
 
 waves_stop = WavesAnimation(
     time=0.05,
-    frames=waves_frames_lib['waves_stop_frames']
+    frames=waves_frames_dict['waves_stop_frames']
 )

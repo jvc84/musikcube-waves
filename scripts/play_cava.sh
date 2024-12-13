@@ -16,6 +16,7 @@ cached_config="$cache_path/cava_option_config_$token"
 config_path=="$HOME/.config/cava"
 config_file="$config_path/cava_option_config"
 
+
 # Functions
 cache_config() {
      cp "$config_file" "$cached_config" > /dev/null 2>&1
@@ -30,7 +31,6 @@ cache_config ||
 (cp "$PARENTDIR/assets/cava/cava_option_config" "$config_file" && cache_config) ||
 (echo "Cannot cache cava config!" && exit 1)
 
-config_file="$cached_config"
 
 if [ "$cava_position" = "all" ]; then
     cut_cava="s/$//"
@@ -52,7 +52,8 @@ else
         cut_cava="s/^$dots//"
     fi
 fi
+    # add dots befor '$' or after '^' to remove bars
 
-(cava -p "$config_file" | sed -u "s/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;" | sed -u "$cut_cava" &     # add dots befor '$' or after '^' to remove bars
-"$MYDIR/player_tracker.sh" "$player" "$category" "$token")
+cava -p "$cached_config" | sed -u "s/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;" | sed -u "$cut_cava" &
+"$MYDIR/player_tracker.sh" "$player" "$category" "$token"
 

@@ -1,6 +1,6 @@
 from animation_rules import Animation
 
-info_frames_lib = {
+info_frames_dict = {
     'info_sound_frames':
         '   sound  ,'
         '  *sound  ,',
@@ -19,10 +19,10 @@ class InfoAnimation(Animation):
 
 info_no_sound = InfoAnimation(
     time=1,
-    frames=info_frames_lib['info_no_sound_frames']
+    frames=info_frames_dict['info_no_sound_frames']
 )
 
 info_sound = InfoAnimation(
     time=1,
-    frames=info_frames_lib['info_sound_frames']
+    frames=info_frames_dict['info_sound_frames']
 )

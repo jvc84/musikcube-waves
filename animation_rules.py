@@ -29,4 +29,4 @@ class Animation(object):
         if category == 'full':
             self.animate_full(self.time, self.frames)
         else:
-            os.system(f"{play_animation} {self.time} '{self.frames}' {category} {token} {shared.player}")
+            os.system(f"'{play_animation}' '{self.time}' '{self.frames}' '{category}' '{token}' '{shared.player}'|")
