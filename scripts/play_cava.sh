@@ -13,7 +13,8 @@ player=${4}
 # Variables
 cache_path="$HOME/.cache/wayves"
 cached_config="$cache_path/cava_option_config_$token"
-config_file="$HOME/.config/cava/cava_option_config"
+config_path=="$HOME/.config/cava"
+config_file="$config_path/cava_option_config"
 
 # Functions
 cache_config() {
@@ -22,6 +23,7 @@ cache_config() {
 
 
 # Main
+mkdir -p "$config_path" &> /dev/null
 mkdir -p "$cache_path" &> /dev/null
 
 cache_config ||
@@ -51,6 +53,6 @@ else
     fi
 fi
 
-cava -p "$config_file" | sed -u "s/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;" | sed -u "$cut_cava" &     # add dots befor '$' or after '^' to remove bars
-"$MYDIR/player_tracker.sh" "$player" "$category" "$token"
+(cava -p "$config_file" | sed -u "s/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;" | sed -u "$cut_cava" &     # add dots befor '$' or after '^' to remove bars
+"$MYDIR/player_tracker.sh" "$player" "$category" "$token")
 
