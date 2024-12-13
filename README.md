@@ -96,7 +96,8 @@ Cava config:
 ### If you want to separate left and right cava halves to put something in between:
 
 ![plot](.doc/images/double_cava_example.png)
-- module for left audio channel:
+
+module for left audio channel:
 
 ```
 "custom/wayves_left": {
@@ -105,9 +106,7 @@ Cava config:
 },
 ```
 
-- some other modules
-
-- module for right audio channel:
+module for right audio channel:
 
 ```
 "custom/wayves_right": {
