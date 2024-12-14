@@ -81,15 +81,18 @@ class Show(object):
         cava_position = option_values['cava_values'][f'{category}_cava_sections']
         play_cava = current_directory + '/scripts/play_cava.sh'
 
-        cava_config_processes = subprocess.check_output(["ps a | grep cava_option_config"], shell=True)
-        cava_config_processes = len(str(cava_config_processes).split("\\n")) - 1
+        cava_config_processes = int(subprocess.check_output(["ps a | grep cava_option_config | wc -l"], shell=True))
 
         if cava_config_processes > 4:
-            os.system("ps aux | grep -ie play_cava.sh | awk '{print $2}' | xargs kill -9 &> /dev/null")
-            os.system("ps aux | grep -ie cava_option_config | awk '{print $2}' | xargs kill -9 &> /dev/null")
+            play_cava_list = str(subprocess.check_output(["ps aux | grep -ie play_cava.sh | awk '{print $2}'"], shell=True))[2:-3]
+            config_cava_list = str(subprocess.check_output(["ps aux | grep -ie cava_option_config | awk '{print $2}'"], shell=True))[2: -3]
+            pid_list = (play_cava_list + config_cava_list).split("\\n")
+
+            for i in pid_list:
+                os.system(f"kill -9 {i} &> /dev/null")
+
 
         os.system(f"{play_cava} {cava_position} {category} {token} {shared.player}")
-
         os.system(f"ps aux | grep -ie {token}" + " | awk '{print $2}' | xargs kill -9 &> /dev/null")
 
         return
