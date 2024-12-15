@@ -80,7 +80,6 @@ class Show(object):
     def show_cava(category):
         cava_position = option_values['cava_values'][f'{category}_cava_sections']
         play_cava = current_directory + '/scripts/play_cava.sh'
-
         cava_config_processes = int(subprocess.check_output(["ps a | grep cava_option_config | wc -l"], shell=True))
 
         if cava_config_processes > 4:
